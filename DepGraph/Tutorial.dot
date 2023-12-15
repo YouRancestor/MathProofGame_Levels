@@ -1,0 +1,68 @@
+digraph tactic_dep {
+    refl
+    
+    rewrite
+    refl -> rewrite
+
+    rewrite_l
+    {rewrite} -> rewrite_l
+
+    rewrite_presion
+    {rewrite; intro_forall} -> rewrite_presion
+
+    nth_rewrite
+    {rewrite; intro_forall} -> nth_rewrite
+
+    exact
+
+    apply
+    exact -> apply
+
+    intro
+    {exact} -> intro
+
+    intro_forall
+    {intro; refl} -> intro_forall
+
+    constructor_and
+    {exact} -> constructor_and
+
+    constructor_iff
+    {constructor_and; cases_and} -> constructor_iff
+
+    left_right
+    {intro} -> left_right
+
+    cases_var
+    {rewrite; left_right} -> cases_var
+
+    cases_or
+    {cases_var} -> cases_or
+
+    cases_and
+    {cases_or; constructor_and} -> cases_and
+
+    // TODO
+    // by_cases
+    // {left_right} -> by_cases
+
+    induction
+    {rewrite} -> induction
+
+    by_contra
+    {intro; apply} -> by_contra
+
+    exfalso
+    {cases_var; by_contra} -> exfalso
+
+    revert
+    {intro_forall} -> revert
+
+    use
+    {intro_forall} -> use
+
+    // TODO
+    // symm
+
+    // split
+}
