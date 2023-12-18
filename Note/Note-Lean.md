@@ -29,3 +29,14 @@
             - evalTactic (stx : Syntax) : TacticM Unit, 执行 stx 表示的 tactic。
     - Meta
         - mkFreshExprMVar (type? : Option Expr) (kind : MetavarKind := MetavarKind.natural) (userName : Name := Name.anonymous) : MetaM Expr
+
+## 构建
+
+### Rebuild Imports
+
+lake "print-paths" "Init" "{imports}"
+
+例：
+```bat
+lake "print-paths" "Init" "Definition" "Collection.succ_eq_add_one" "Collection.add_comm"
+```
