@@ -12,16 +12,15 @@ open Nat
 /--
 公理3 0不是任何自然数的后继数。
 -/
-theorem zero_ne_succ {n : ℕ} : succ n ≠ 0 := Nat.succ_ne_zero _
+theorem zero_ne_succ'?' {n : ℕ} : succ n ≠ 0 := Nat.succ_ne_zero _
 
 /--
 公理4 不同的自然数有不同的后继数，后继数相同的自然数是同一个数。
 -/
-theorem succ_inj {a b : ℕ} : succ a = succ b ↔ a = b := Nat.succ_inj'
+theorem succ_inj'?' {a b : ℕ} : succ a = succ b → a = b := Nat.succ_inj'.mp
 
 -- 公理5 归纳原理（tactic induction）
 
-open Nat in
-theorem zero_is_0 : zero = 0 := Nat.zero_eq
+theorem zero_is_0'?' : zero = 0 := Nat.zero_eq
 
-def one : Nat := succ 0
+theorem one_eq_succ_zero'?' : 1 = succ 0 := rfl

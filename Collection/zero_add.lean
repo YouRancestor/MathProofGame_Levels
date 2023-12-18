@@ -1,12 +1,14 @@
 import Definition
 
-theorem zero_add (n : ℕ) : 0 + n = n := by
-  induction n
+open Nat
+
+theorem zero_add'?' (a : ℕ) : 0 + a = a := by
+  induction a
   case zero =>
-    rewrite [add_zero]
-    rewrite [zero_is_0]
+    rewrite [zero_is_0'?']
+    rewrite [add_zero'?']
     refl
   case succ a ih =>
-    rewrite [add_succ]
+    rewrite [add_succ'?']
     rewrite [ih]
     refl
