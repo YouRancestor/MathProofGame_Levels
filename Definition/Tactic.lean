@@ -9,16 +9,21 @@ import Std.Tactic.Relation.Symm -- symm
 open Lean.Elab.Tactic
 
 @[symm]
-theorem Eq.symm' : x = y → y = x := Eq.symm
+theorem Eq.symm'?' : x = y → y = x := Eq.symm
+@[symm]
+theorem Ne.symm'?' : x ≠ y → y ≠ x := Ne.symm
 
 elab "refl" : tactic =>
   Lean.Elab.Tactic.withMainContext do
     let goal ← Lean.Elab.Tactic.getMainGoal
-    let goalDecl ← goal.getDecl
-    let goalType := goalDecl.type
-    match goalType.eq? with
+    let type' ← goal.getType'
+    -- let type ← goal.getType
+    -- dbg_trace f!"type':{type'}\n"
+    -- dbg_trace f!"type:{type}\n"
+    match type'.eq? with
     | none => throwError "The goal is not an equality"
     | some (_, lhs, rhs) =>
+      -- dbg_trace f!"l:{lhs},\nr:{rhs}\n"
       if (lhs == rhs) then
         evalTactic $ ← `(tactic|rfl)
       else
