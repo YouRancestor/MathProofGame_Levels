@@ -7,11 +7,11 @@ digraph tactic_dep {
     rewrite_l
     {rewrite} -> rewrite_l
 
-    rewrite_presion
-    {rewrite; intro_forall} -> rewrite_presion
+    rewrite_precision
+    {rewrite} -> rewrite_precision
 
     nth_rewrite
-    {rewrite; intro_forall} -> nth_rewrite
+    {rewrite; rewrite_precision; intro_forall/*认识∀符号*/} -> nth_rewrite
 
     exact
 
@@ -43,14 +43,15 @@ digraph tactic_dep {
     {cases_or; constructor_and} -> cases_and
 
     // TODO
-    // by_cases
-    // {left_right} -> by_cases
+    by_cases
+    {left_right; let} -> by_cases
 
     induction
     {rewrite} -> induction
 
     // TODO
     induction_generalizing
+    {induction} -> induction_generalizing
 
     by_contra
     {intro; apply} -> by_contra
@@ -71,7 +72,11 @@ digraph tactic_dep {
     have
 
     // TODO
+    let
+
+    // TODO
     symm
+    {exact} -> symm
 
     // TODO
     simp // 高级
