@@ -11,5 +11,6 @@ example (P Q : Prop) : (P ∧ ¬P) → Q := by
   cases h
   case intro h_left h_right =>
     exfalso
-    apply h_right
-    exact h_left
+    case h =>
+      apply h_right
+      exact h_left
