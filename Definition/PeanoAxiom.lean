@@ -12,7 +12,7 @@ open Nat
 /--
 公理3 0不是任何自然数的后继数。
 -/
-theorem zero_ne_succ'?' {n : ℕ} : 0 ≠ succ n := (Nat.succ_ne_zero n).symm
+theorem zero_ne_succ'?' (n : ℕ) : 0 ≠ succ n := (Nat.succ_ne_zero n).symm
 
 /--
 公理4 不同的自然数有不同的后继数，后继数相同的自然数是同一个数。
