@@ -1,0 +1,235 @@
+digraph theorem_dep {
+    // Addition
+    Nat [label="Natural Number\n0 : Nat\nsucc (n : Nat) : Nat", comment="Axiom 1,2"]
+
+    Nat_Add [label="Addition\na + 0 = a\na + succ b = succ (a + b)"]
+    add_zero[label="n + 0 = n"]
+    add_succ[label="a + (succ d) = succ (a + d)"]
+    Nat_Add -> {add_zero; add_succ}
+
+    zero_add[label="0 + n = n"]
+    succ_add[label="succ a + b = succ (a + b)"]
+    add_succ -> {zero_add; succ_add}
+
+    add_assoc[label="a + b + c = a + (b + c)"]
+    {add_zero; add_succ} -> add_assoc
+
+    add_comm[label="a + b = b + a"]
+    {
+        add_zero;
+        zero_add;
+        add_succ;
+        succ_add
+    } -> add_comm
+
+    one_eq_succ_zero[label="1 = succ 0"]
+    succ_eq_add_one[label="succ d = d + 1"]
+    {one_eq_succ_zero; add_succ} -> succ_eq_add_one
+
+    add_right_comm[label="a + b + c = a + c + b"]
+    {add_assoc; add_comm} -> add_right_comm
+
+    succ_inj[label="succ a = succ b → a = b", comment="Axiom 4"]
+    succ_inj -> succ_succ_inj
+
+    succ_eq_succ_of_eq[label="a = b → succ a = succ b"]
+
+    succ_eq_succ_iff[label="succ a = succ b ↔ a = b"]
+    {
+        Nat;
+        succ_eq_succ_of_eq;
+        succ_inj
+    } -> succ_eq_succ_iff
+
+    add_right_cancel[label="a + t = b + t → a = b"]
+    {add_zero; add_succ; succ_inj} -> add_right_cancel
+
+    add_left_cancel [label="t + a = t + b → a = b"]
+    {add_comm; add_right_cancel} -> add_left_cancel
+
+    add_right_cancel_iff[label="a + t = b + t ↔ a = b"]
+    add_right_cancel -> add_right_cancel_iff
+
+    eq_zero_of_add_right_eq_self[label="a + b = a → b = 0"]
+    {add_left_cancel; add_zero} -> eq_zero_of_add_right_eq_self
+
+    zero_ne_succ[label="zero ≠ succ a", comment="Axiom 3"]
+    succ_ne_zero[label="succ a ≠ zero"]
+    zero_ne_succ -> succ_ne_zero
+
+    add_left_eq_zero[label="a + b = 0 → b = 0"]
+    {add_succ; succ_ne_zero} -> add_left_eq_zero
+
+    add_right_eq_zero[label="a + b = 0 → a = 0"]
+    {add_comm; add_left_eq_zero} -> add_right_eq_zero
+
+    add_one_eq_succ[label="d + 1 = succ d"]
+    succ_eq_add_one -> add_one_eq_succ
+
+    ne_succ_self[label="n ≠ succ n"]
+    {zero_ne_succ; succ_inj} -> ne_succ_self
+
+
+    // Multiplication
+    Nat_Mul [label="Multiplication\na * 0 = 0\na * succ(b) = a * b + a"]
+    mul_zero [label="a * 0 = 0"]
+    mul_succ [label="a * succ(b) = a * b + a"]
+
+    Nat_Mul -> {mul_zero; mul_succ}
+    zero_mul [label="0 * m = 0"]
+    {mul_zero; mul_succ; add_zero} -> zero_mul
+
+    mul_one [label="m * 1 = m"]
+    {
+        one_eq_succ_zero; mul_succ;
+        mul_zero;zero_add
+    } -> mul_one
+
+    one_mul [label="1 * m = m"]
+    {
+        mul_zero;
+        mul_succ;
+        succ_eq_add_one;
+    } -> one_mul
+
+    mul_add [label="t * (a + b) = t * a + t * b"]
+    {
+        add_zero;
+        mul_zero;
+        add_succ;
+        mul_succ;
+        add_assoc;
+    } -> mul_add
+    mul_add -> left_distrib
+    left_distrib[label="t * (a + b) = t * a + t * b"]
+
+    mul_assoc [label="(a * b) * c = a * (b * c)"]
+    {
+        mul_zero;
+        mul_succ;
+        mul_add;
+    } -> mul_assoc
+
+    succ_mul [label="succ a * b = a * b + b"]
+    {
+        mul_zero;
+        add_zero;
+        mul_succ;
+        add_succ;
+        add_assoc;
+        add_comm
+    } -> succ_mul
+
+    add_mul [label="(a + b) * t = a * t + b * t"]
+    {
+        zero_mul;
+        add_zero;
+        add_succ;
+        succ_mul;
+        add_assoc;
+    } -> add_mul
+    add_mul -> right_distrib
+    right_distrib [label="(a + b) * t = a * t + b * t"]
+
+    mul_comm [label="a * b = b * a"]
+    {
+        zero_mul;
+        mul_zero;
+        succ_mul;
+        mul_succ;
+    } -> mul_comm
+
+    mul_left_comm [label="a * (b * c) = b * (a * c)"]
+    {
+        mul_assoc;
+        mul_comm;
+    } -> mul_left_comm
+
+    mul_pos [label="a ≠ 0 → b ≠ 0 → a * b ≠ 0"]
+    {
+        mul_succ;
+        add_succ;
+        succ_ne_zero;
+    } -> mul_pos
+
+    eq_zero_or_eq_zero_of_mul_eq_zero [label="a * b = 0 → a = 0 ∨ b = 0"]
+    {
+        mul_succ;
+        add_succ;
+        succ_ne_zero;
+    } -> eq_zero_or_eq_zero_of_mul_eq_zero
+
+    mul_eq_zero_iff [label="a * b = 0 ↔ a = 0 ∨ b = 0"]
+    {
+        eq_zero_or_eq_zero_of_mul_eq_zero;
+        zero_mul;
+        mul_zero;
+    } -> mul_eq_zero_iff
+
+    mul_left_cancel [label="∀a ≠ 0, a * b = a * c → b = c"]
+    {
+        mul_zero;
+        eq_zero_or_eq_zero_of_mul_eq_zero;
+        succ_ne_zero;
+        mul_succ;
+        add_right_cancel
+    } -> mul_left_cancel
+
+    // Power
+    Nat_Pow [label="Power\na ^ 0 = 1\na ^ succ(b) = a ^ b * a"]
+    pow_zero [label="m ^ 0 = 1"]
+    pow_succ [label="a ^ succ(b) = a ^ b * a"]
+    Nat_Pow -> {pow_zero; pow_succ}
+
+    zero_pow_zero [label="0 ^ 0 = 1"]
+    pow_zero -> zero_pow_zero
+
+    zero_pow_succ [label="0 ^ (succ m) = 0"]
+    {
+        pow_succ;
+        mul_zero;
+    } -> zero_pow_succ
+
+    pow_one [label="a ^ 1 = a"]
+    {
+        one_eq_succ_zero;
+        pow_succ;
+        pow_zero;
+        one_mul;
+    } -> pow_one
+
+    one_pow [label="1 ^ m = 1"]
+    {
+        pow_zero;
+        pow_succ;
+        mul_one;
+    } -> one_pow
+
+    pow_add [label="a ^ (m + n) = a ^ m * a ^ n"]
+    {
+        add_zero;
+        pow_zero;
+        mul_one;
+        add_succ;
+        pow_succ;
+        mul_assoc;
+    } -> pow_add
+
+    mul_pow [label="(a * b) ^ n = a ^ n * b ^ n"]
+    {
+        pow_zero;
+        mul_one;
+        pow_succ;
+    } -> mul_pow
+
+    pow_pow [label="(a ^ m) ^ n = a ^ (m * n)"]
+    {
+        mul_zero;
+        pow_zero;
+        pow_succ;
+        mul_succ;
+        pow_add;
+    } -> pow_pow
+
+    
+}
