@@ -13,6 +13,9 @@ theorem Eq.symm'?' : x = y → y = x := Eq.symm
 @[symm]
 theorem Ne.symm'?' : x ≠ y → y ≠ x := Ne.symm
 
+/--
+`refl` tries to close the current goal using reflexivity.
+-/
 elab "refl" : tactic =>
   Lean.Elab.Tactic.withMainContext do
     let goal ← Lean.Elab.Tactic.getMainGoal
