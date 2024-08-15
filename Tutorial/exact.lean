@@ -1,5 +1,5 @@
 import Tutorial.Notation
-import Definition.Tactic
+-- import Definition.Tactic
 
 /--
 ### 即（exact）

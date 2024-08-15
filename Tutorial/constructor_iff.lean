@@ -1,5 +1,5 @@
 import Tutorial.Notation
-import Definition.Tactic
+-- import Definition.Tactic
 
 /--
 ### 拆分（当且仅当）(constructor)

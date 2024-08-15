@@ -1,5 +1,5 @@
 import Tutorial.Notation
-import Definition.Tactic
+import Tactic.refl
 
 /--
 ### 自反

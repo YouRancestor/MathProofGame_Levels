@@ -1,5 +1,5 @@
 import Tutorial.Notation
-import Definition.Tactic
+import Std.Tactic.Basic
 
 /--
 ### 反证（by_contra）
@@ -9,8 +9,8 @@ example (P Q : Prop) : (¬Q → ¬P) → (P → Q) := by
   intro h
   intro p
   by_contra nq
-  apply h
-  case a =>
+  refine h ?nq ?p -- 类似 exact _ _
+  case nq =>
     exact nq
-  case a =>
+  case p =>
     exact p

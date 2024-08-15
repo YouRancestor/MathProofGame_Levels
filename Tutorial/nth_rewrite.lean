@@ -1,6 +1,6 @@
 import Tutorial.Notation
-import Definition.Tactic
-
+import Tactic.nth_rewrite
+import Tactic.refl
 
 open Nat in
 /--

@@ -1,20 +1,6 @@
-import Lean
-import Mathlib.Tactic.NthRewrite -- nth_rewrite
-import Mathlib.Tactic.LeftRight -- left/right
-import Mathlib.Tactic.Use -- use
-import Mathlib.Tactic.Cases -- cases
-import Std.Tactic.Relation.Symm -- symm
-import Std.Tactic.ByCases -- by_cases
-import Std.Tactic.Basic -- exfalso
--- import Init.Data.Option.Basic
--- open Lean Lean.Expr Lean.Meta
-open Lean.Elab.Tactic
+import Std.Tactic.Basic -- for Iff.rfl
 
-@[symm]
-theorem Eq.symm'?' : x = y → y = x := Eq.symm
-@[symm]
-theorem Ne.symm'?' : x ≠ y → y ≠ x := Ne.symm
-
+open Lean.Elab.Tactic in
 /--
 `refl` tries to close the current goal using reflexivity.
 -/

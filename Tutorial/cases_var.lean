@@ -1,5 +1,7 @@
 import Tutorial.Notation
-import Definition.Tactic
+import Tactic.left
+import Tactic.right
+import Tactic.refl
 
 open Nat in
 /--
