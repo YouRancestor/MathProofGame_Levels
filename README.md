@@ -20,7 +20,7 @@
 
 ```bat
 REM TODO: copy, git config --local, git init, git add, git commit 初始化仓库
-lake "print-paths" "Init" "Definition"
+lake "print-paths" "Init" "Definition" REM 文件在 print-paths 之后可以被其他文件import，文件（夹）有改动之后要重新执行
 git commit -m "init"
 REM TODO: 部署Tutorial关卡
 lake "print-paths" "Init" "Tutorial.Notation"
