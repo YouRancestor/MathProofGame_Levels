@@ -7,11 +7,7 @@ package «MathProofGame» where
 -- for modules need to import
 lean_lib «Definition» where
   -- add package configuration options here
-lean_lib «Tutorial» where
-  -- add package configuration options here
 lean_lib «Collection» where
-  -- add package configuration options here
-lean_lib «Tactic» where
   -- add package configuration options here
 
 @[default_target]
