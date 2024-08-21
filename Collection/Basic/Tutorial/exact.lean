@@ -6,6 +6,3 @@ import Definition.Basic.Tutorial.Notation
 -/
 example (h : y = x + 7) : y = x + 7 := by
   exact h
-
-example (P Q : Type) (p : P) (h : P → Q) : Q := by
-  exact h p
