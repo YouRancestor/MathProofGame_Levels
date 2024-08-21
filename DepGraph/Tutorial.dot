@@ -1,8 +1,11 @@
 digraph tactic_dep {
-    refl
+    refl_eq
+    refl_iff
+
+    refl_eq -> refl_iff
     
     rewrite
-    refl -> rewrite
+    refl_eq -> rewrite
 
     rewrite_l
     {rewrite} -> rewrite_l
@@ -22,7 +25,7 @@ digraph tactic_dep {
     {exact} -> intro
 
     intro_forall
-    {intro; refl} -> intro_forall
+    {intro; refl_eq} -> intro_forall
 
     constructor_and
     {exact} -> constructor_and
