@@ -3,7 +3,7 @@ import Definition.Basic.Tactic
 
 import Collection.Basic.Arithmetic.add_left_cancel
 
-open Nat in
+open Nat
 theorem ne_succ_self'?' {a : ℕ} : a ≠ succ a := by
   cases a
   case zero =>
@@ -17,7 +17,7 @@ theorem ne_succ_self'?' {a : ℕ} : a ≠ succ a := by
     -- rewrite [←succ_eq_add_one'?'] at q
     exact zero_ne_succ'?' 0 q
 
-open Nat in
+open Nat
 theorem ne_succ_self (a : ℕ) : a ≠ succ a := by
   intro h
   show_term cases h

@@ -5,7 +5,7 @@ import Collection.Basic.Arithmetic.zero_mul
 import Collection.Basic.Arithmetic.succ_mul
 import Collection.Basic.Arithmetic.add_assoc
 
-open Nat in
+open Nat
 theorem mul_add'?' (t a b : Nat) : t * (a + b) = t * a + t * b := by
   induction t
   case zero =>

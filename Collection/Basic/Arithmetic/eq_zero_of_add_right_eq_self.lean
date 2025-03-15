@@ -4,7 +4,7 @@ import Definition.Basic.Tactic
 import Collection.Basic.Arithmetic.zero_add
 import Collection.Basic.Arithmetic.succ_add
 
-open Nat in
+open Nat
 theorem eq_zero_of_add_right_eq_self'?' {a b : ℕ} : a + b = a → b = 0 := by
   intro h
   induction a

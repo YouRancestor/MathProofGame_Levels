@@ -4,7 +4,7 @@ import Definition.Basic.Tactic
 import Collection.Basic.Arithmetic.zero_add
 import Collection.Basic.Arithmetic.succ_add
 
-open Nat in
+open Nat
 theorem add_left_cancel'?' {t a b : ℕ} : t + a = t + b → a = b := by
   intro h
   induction t

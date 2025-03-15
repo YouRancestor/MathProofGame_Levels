@@ -5,7 +5,7 @@ import Collection.Basic.Arithmetic.zero_add
 import Collection.Basic.Arithmetic.succ_add
 import Collection.Basic.Arithmetic.succ_ne_zero
 
-open Nat in
+open Nat
 theorem add_left_eq_zero'?' {a b : ℕ} : a + b = 0 → b = 0 := by
   intro h
   cases a

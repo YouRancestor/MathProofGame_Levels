@@ -1,7 +1,7 @@
 import Definition.Basic.Arithmetic
 import Definition.Basic.Tactic
 
-open Nat in
+open Nat
 theorem zero_add'?' (a : ℕ) : 0 + a = a := by
   induction a
   case zero =>

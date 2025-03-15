@@ -1,7 +1,7 @@
 import Definition.Basic.Tutorial.Notation
 import Definition.Basic.Tactic
 
-open Nat in
+open Nat
 /--
 ### 归纳（induction）
 有时，已知条件不足以直接证明一条命题，此时可以尝对变量进行归纳来证明它。

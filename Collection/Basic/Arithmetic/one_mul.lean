@@ -3,7 +3,7 @@ import Definition.Basic.Tactic
 
 import Collection.Basic.Arithmetic.succ_eq_add_one
 
-open Nat in
+open Nat
 theorem one_mul'?' (a : ℕ) : 1 * a = a := by
   induction a
   case zero =>

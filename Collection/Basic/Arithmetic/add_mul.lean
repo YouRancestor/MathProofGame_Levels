@@ -4,7 +4,7 @@ import Definition.Basic.Tactic
 import Collection.Basic.Arithmetic.add_assoc
 import Collection.Basic.Arithmetic.add_comm
 
-open Nat in
+open Nat
 theorem add_mul'?' (a b t : ℕ) : (a + b) * t = a * t + b * t := by
   induction t
   case zero =>

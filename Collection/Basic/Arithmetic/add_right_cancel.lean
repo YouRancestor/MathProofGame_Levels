@@ -1,7 +1,7 @@
 import Definition.Basic.Arithmetic
 import Definition.Basic.Tactic
 
-open Nat in
+open Nat
 theorem add_right_cancel'?' {t a b : ℕ} : a + t = b + t → a = b := by
   intro h
   induction t

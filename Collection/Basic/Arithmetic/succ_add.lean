@@ -1,7 +1,7 @@
 import Definition.Basic.Arithmetic
 import Definition.Basic.Tactic
 
-open Nat in
+open Nat
 theorem succ_add'?' (a b : ℕ) : succ a + b = succ (a + b) := by
   induction b
   case zero =>

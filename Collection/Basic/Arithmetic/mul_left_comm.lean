@@ -4,7 +4,7 @@ import Definition.Basic.Tactic
 import Collection.Basic.Arithmetic.mul_add
 import Collection.Basic.Arithmetic.mul_comm
 
-open Nat in
+open Nat
 theorem mul_left_comm'?' (a b c : ℕ) : a * (b * c) = b * (a * c) := by
   induction c
   case zero =>

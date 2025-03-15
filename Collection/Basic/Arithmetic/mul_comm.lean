@@ -4,7 +4,7 @@ import Definition.Basic.Tactic
 import Collection.Basic.Arithmetic.zero_mul
 import Collection.Basic.Arithmetic.succ_mul
 
-open Nat in
+open Nat
 theorem mul_comm'?' (a b : ℕ) : a * b = b * a := by
   induction b
   case zero =>

@@ -6,7 +6,7 @@ import Collection.Basic.Arithmetic.add_left_eq_zero
 import Collection.Basic.Arithmetic.add_right_cancel
 import Collection.Basic.Arithmetic.succ_eq_succ_of_eq
 
-open Nat in
+open Nat
 theorem mul_left_cancel'?' {t a b : ℕ} {ht : t ≠ 0} : t * a = t * b → a = b := by
   intro h
   induction b generalizing a

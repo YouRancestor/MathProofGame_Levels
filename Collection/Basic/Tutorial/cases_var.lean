@@ -1,7 +1,7 @@
 import Definition.Basic.Tutorial.Notation
 import Definition.Basic.Tactic
 
-open Nat in
+open Nat
 /--
 ### 讨论（变量）（cases）
 对目标中指定变量的可能取值进行**讨论**，并分别给出证明。例如，对于自然数 n ，根据自然数的定义， n 要么取 0 ，要么取 succ d 。

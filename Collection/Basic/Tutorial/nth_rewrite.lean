@@ -1,7 +1,7 @@
 import Definition.Basic.Tutorial.Notation
 import Definition.Basic.Tactic
 
-open Nat in
+open Nat
 /--
 ### 指定代换（nth_rewrite）
 当目标中有两个以上相同的部分时，使用代换指令会将匹配的所有相同的部分全部替换。若只想替换其中的某一个，可以使用**指定代换**，指定要替换的序号。

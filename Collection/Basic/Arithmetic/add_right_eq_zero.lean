@@ -3,7 +3,7 @@ import Definition.Basic.Tactic
 
 import Collection.Basic.Arithmetic.succ_ne_zero
 
-open Nat in
+open Nat
 theorem add_right_eq_zero'?' {a b : ℕ} : a + b = 0 → a = 0 := by
   intro h
   cases b

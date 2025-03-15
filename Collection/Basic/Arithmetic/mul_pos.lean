@@ -4,7 +4,7 @@ import Definition.Basic.Tactic
 import Collection.Basic.Arithmetic.succ_mul
 import Collection.Basic.Arithmetic.add_left_eq_zero
 
-open Nat in
+open Nat
 theorem mul_pos'?' {a b : ℕ} : a ≠ 0 ∧ b ≠ 0 → a * b ≠ 0 := by
   intro h
   intro h1

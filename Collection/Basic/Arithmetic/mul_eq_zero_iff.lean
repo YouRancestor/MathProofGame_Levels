@@ -5,7 +5,7 @@ import Collection.Basic.Arithmetic.succ_mul
 import Collection.Basic.Arithmetic.add_left_eq_zero
 import Collection.Basic.Arithmetic.zero_mul
 
-open Nat in
+open Nat
 theorem mul_eq_zero_iff'?' {a b : ℕ} : a * b = 0 ↔ a = 0 ∨ b = 0 := by
   constructor
   case mp =>

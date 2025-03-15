@@ -4,7 +4,7 @@ import Definition.Basic.Tactic
 import Collection.Basic.Arithmetic.succ_eq_add_one
 import Collection.Basic.Arithmetic.succ_add
 
-open Nat in
+open Nat
 theorem add_right_comm'?' (a b c : ℕ) : a + b + c = a + c + b := by
   induction c
   case zero =>

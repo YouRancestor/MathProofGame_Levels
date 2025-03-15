@@ -1,7 +1,7 @@
 import Definition.Basic.Arithmetic
 import Definition.Basic.Tactic
 
-open Nat in
+open Nat
 theorem add_assoc'?' (a b c : ℕ) : a + b + c = a + (b + c) := by
   induction c
   case zero =>
