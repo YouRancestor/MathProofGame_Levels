@@ -1,0 +1,45 @@
+﻿{
+    "stages":
+    [
+        "install_lean",
+        "init_universe",
+        "install_lake_packages",
+        "unpack",
+        "lake_print_paths"
+    ],
+    "steps":
+    {
+        "install_lean":
+        [
+            {
+                "type": "copy",
+                "src": "lean-4.2.0",
+                "dst": "$(CacheRootDir)/Lean/lean-4.2.0"
+            }
+        ],
+        "init_universe":
+        [
+            {
+                "type": "cmd",
+                "cwd": "$(CacheDir)",
+                "cmd":
+                [
+                    "$(CacheRootDir)/Lean/lean-4.2.0/bin/lake.exe"
+                ],
+                "param":
+                [
+                    "new",
+                    "Common"
+                ]
+            }
+        ],
+        "install_lake_packages":
+        [
+            {
+                "type": "copy",
+                "src": "lake-packages",
+                "dst": "$(WorkspaceDir)/lake-packages"
+            }
+        ]
+    }
+}
