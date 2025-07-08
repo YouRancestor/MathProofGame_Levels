@@ -32,6 +32,10 @@
                     "new",
                     "Common"
                 ]
+            },
+            {
+                "type": "init_lean_lib",
+                "universe": "Common"
             }
         ],
         "install_lake_packages":
