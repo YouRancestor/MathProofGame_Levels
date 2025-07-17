@@ -6,7 +6,8 @@
         "install_lake_packages",
         "update_lake_manifest",
         "unpack",
-        "lake_print_paths"
+        "lake_print_paths",
+        "init_graph"
     ],
     "steps":
     {
