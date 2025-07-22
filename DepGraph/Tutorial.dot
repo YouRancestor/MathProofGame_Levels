@@ -1,4 +1,7 @@
 digraph tactic_dep {
+    layout="neato"
+    start=3
+
     refl_eq
     refl_iff
 

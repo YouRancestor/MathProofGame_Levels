@@ -1,4 +1,7 @@
 digraph theorem_dep {
+    layout="neato"
+    start=3
+
     // Addition
     Nat [label="Natural Number\n0 : Nat\nsucc (n : Nat) : Nat", comment="Axiom 1,2"]
 
