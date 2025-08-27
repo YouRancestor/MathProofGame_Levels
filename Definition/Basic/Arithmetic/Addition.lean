@@ -2,8 +2,6 @@ import Definition.Basic.Arithmetic.PeanoAxiom
 
 open Nat
 
--- 加法定义
-
 /--
 任何自然数加0等于它本身
 -/

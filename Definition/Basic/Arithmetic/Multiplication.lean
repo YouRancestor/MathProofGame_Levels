@@ -3,8 +3,6 @@ import Definition.Basic.Arithmetic.Addition
 
 open Nat
 
--- 乘法定义
-
 /--
 任何自然数乘0等于0
 -/
