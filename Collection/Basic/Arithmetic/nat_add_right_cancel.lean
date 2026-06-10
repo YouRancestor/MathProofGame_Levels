@@ -13,5 +13,5 @@ theorem nat_add_right_cancel'?' {t a b : ℕ} : a + t = b + t → a = b := by
     rewrite [nat_add_succ'?'] at h
     rewrite [nat_add_succ'?'] at h
     apply n_ih
-    have p := nat_succ_inj'?' h
-    exact p
+    apply nat_succ_inj'?'
+    exact h
