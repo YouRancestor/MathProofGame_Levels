@@ -63,7 +63,7 @@ digraph tactic_dep {
     {intro; apply} -> by_contra
 
     exfalso
-    {cases_var; by_contra} -> exfalso
+    {cases_and; by_contra} -> exfalso
 
     revert
     {intro_forall} -> revert
