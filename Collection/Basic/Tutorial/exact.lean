@@ -1,5 +1,6 @@
 import Definition.Basic.Tutorial.Notation
 
+open Nat
 /--
 ### 即（exact）
 有时，目标已经和已知条件中的某条命题相同，这时可以使用“即”来完成证明。

@@ -1,6 +1,7 @@
 import Definition.Basic.Tutorial.Notation
 import Definition.Basic.Tactic
 
+open Nat
 /--
 ### 代换（rewrite）
 假设我们有一个已知条件 a = b，那么我们就可以使用代换来将目标或其他已知条件中出现的 a 替换为 b ，从而对目标或假设进行改写。

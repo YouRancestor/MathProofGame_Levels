@@ -1,6 +1,7 @@
 import Definition.Basic.Tutorial.Notation
 import Definition.Basic.Tactic
 
+open Nat
 /--
 ### 精准代换
 代换指令可以智能匹配目标中可被代换的部分，例如本例中会按出现顺序依次使用目标中的 a, b, c 替换 h 中的形参 n ，然后使用替换后的 a + 0, b + 0 以及 c + 0 去目标中尝试匹配，看目标是否存在相同的部分，若匹配成功，则停止尝试并执行代换。
